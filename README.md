@@ -35,7 +35,7 @@ GET /money/sprinkle/{token}
 * HTTP Header 
 요청 HTTP Header에 대화방 ID와 사용자 ID를 전달합니다. \
 -대화방 ID : X-ROOM-ID \
--사용자 ID : X-USER-ID \
+-사용자 ID : X-USER-ID 
 
 * Error
 
@@ -48,16 +48,16 @@ GET /money/sprinkle/{token}
 ### 1. 머니 뿌리기
 뿌릴 금액, 뿌릴 인원을 요청값으로 받아 정보를 db에 저장합니다. -> money_sprinkle \
 뿌릴 금액을 인원수에 맞게 분배되는 정보를 db에 저장합니다. -> money_receive \
-고유 token을 발급하고 응답값으로 내려줍니다. \
+고유 token을 발급하고 응답값으로 내려줍니다. 
 
 POST /money/sprinkle
 
 * Request
 ```
-curl -X POST http://localhost:8080/money/sprinkle \
-  -H 'Content-Type: application/json' \
-  -H 'X-ROOM-ID: AAA' \
-  -H 'X-USER-ID: 3' \
+curl -X POST http://localhost:8080/money/sprinkle 
+  -H 'Content-Type: application/json' 
+  -H 'X-ROOM-ID: AAA' 
+  -H 'X-USER-ID: 3' 
   -d '{
        "data":{
        "sprinkle_money":"20000",
@@ -95,9 +95,9 @@ PUT /money/receive/{token}
 
 * Request
 ```
-curl -X PUT http://localhost:8080/money/receive/{token} \
-  -H 'Content-Type: application/json' \
-  -H 'X-ROOM-ID: AAA' \
+curl -X PUT http://localhost:8080/money/receive/{token} 
+  -H 'Content-Type: application/json' 
+  -H 'X-ROOM-ID: AAA' 
   -H 'X-USER-ID: 4' 
 ```
 
@@ -134,9 +134,9 @@ GET /money/sprinkle/{token}
 
 * Request
 ```
-curl -X GET http://localhost:8080/money/sprinkle/{token} \
-  -H 'Content-Type: application/json' \
-  -H 'X-ROOM-ID: AAA' \
+curl -X GET http://localhost:8080/money/sprinkle/{token} 
+  -H 'Content-Type: application/json' 
+  -H 'X-ROOM-ID: AAA' 
   -H 'X-USER-ID: 3' 
 ```
 
@@ -170,8 +170,8 @@ curl -X GET http://localhost:8080/money/sprinkle/{token} \
 
 ### Entity
 * room
-- 대화방 정보 데이터 
-- 논리적으로 room_user 테이블과 1:n 관계
+대화방 정보 데이터 \
+논리적으로 room_user 테이블과 1:n 관계
 ```
 id : room 식별자 (PK / GeneratedValue)
 created_at : 생성 시각 
@@ -179,8 +179,8 @@ user_name : 대화방 이름
 ```
 
 * user
-- 사용자 정보 데이터 
-- 논리적으로 room_user 테이블과 1:n 관계
+사용자 정보 데이터 \
+논리적으로 room_user 테이블과 1:n 관계
 ```
 id : user 식별자 (PK / GeneratedValue)
 created_at : 생성 시각 
@@ -189,9 +189,9 @@ user_password : 사용자 비밀번호
 ```
 
 * room_user
-- 대화방 사용자 정보 데이터 
-- 논리적으로 room 테이블과 n:1 관계 
-- 논리적으로 user 테이블과 n:1 관계 
+대화방 사용자 정보 데이터 \
+논리적으로 room 테이블과 n:1 관계 \
+논리적으로 user 테이블과 n:1 관계 
 
 ```
 id : room_user 식별자 (PK)
@@ -201,9 +201,9 @@ join : 입장 시각
 ```
 
 * money_sprinkle
-- 머니 뿌리기 정보 데이터 
-- 논리적으로 room_user 테이블과 n:1 관계 
-- 논리적으로 money_receive 테이블과 1:n 관계 
+머니 뿌리기 정보 데이터 \
+논리적으로 room_user 테이블과 n:1 관계 \
+논리적으로 money_receive 테이블과 1:n 관계 
 ```
 seq : money_sprinkle 식별자 (PK / GeneratedValue)
 sprinkle_user_id : room_user 식별자 (FK)
@@ -215,7 +215,7 @@ token : 뿌리기 요청건에 대한 고유 token값
 ```
 
 * money_receive
-- 뿌린금액에 대한 분배 정보 데이터 
+- 뿌린금액에 대한 분배 정보 데이터 \
 - 논리적으로 money_sprinkle 테이블과 n:1 관계
 ```
 seq : money_receive 식별자 (PK / GeneratedValue)
