@@ -32,7 +32,7 @@ GET /money/sprinkle/{token}
 	- 기능 : 뿌리기 조회
 	
 ### 0. 공통
-* HTTP Header 
+* HTTP Header \
 요청 HTTP Header에 대화방 ID와 사용자 ID를 전달합니다. \
 -대화방 ID : X-ROOM-ID \
 -사용자 ID : X-USER-ID 
@@ -168,8 +168,8 @@ curl -X GET http://localhost:8080/money/sprinkle/{token}
 | FAIL | 뿌린 사용자가 존재하지 않을때|
 | FAIL | 뿌린지 7일이 지난 요청일때 - 조회 만료시각 지남|
 
-### Entity
-* room
+## Entity 
+* room \
 대화방 정보 데이터 \
 논리적으로 room_user 테이블과 1:n 관계
 ```
@@ -178,7 +178,7 @@ created_at : 생성 시각
 user_name : 대화방 이름
 ```
 
-* user
+* user \
 사용자 정보 데이터 \
 논리적으로 room_user 테이블과 1:n 관계
 ```
@@ -188,7 +188,7 @@ user_name : 사용자 이름
 user_password : 사용자 비밀번호
 ```
 
-* room_user
+* room_user \
 대화방 사용자 정보 데이터 \
 논리적으로 room 테이블과 n:1 관계 \
 논리적으로 user 테이블과 n:1 관계 
@@ -200,7 +200,7 @@ user_id : user 식별자 (FK)
 join : 입장 시각 
 ```
 
-* money_sprinkle
+* money_sprinkle \
 머니 뿌리기 정보 데이터 \
 논리적으로 room_user 테이블과 n:1 관계 \
 논리적으로 money_receive 테이블과 1:n 관계 
@@ -214,9 +214,9 @@ expire_at : 뿌리기 조회 만료 시각
 token : 뿌리기 요청건에 대한 고유 token값
 ```
 
-* money_receive
-- 뿌린금액에 대한 분배 정보 데이터 \
-- 논리적으로 money_sprinkle 테이블과 n:1 관계
+* money_receive \
+뿌린금액에 대한 분배 정보 데이터 \
+논리적으로 money_sprinkle 테이블과 n:1 관계
 ```
 seq : money_receive 식별자 (PK / GeneratedValue)
 money_sprinkle_seq : money_sprinkle 식별자 (FK)
