@@ -137,7 +137,13 @@ public class SprinkleApiLogicService implements SprinkleInterface<SprinkleApiReq
     }
 
     private Header<SprinkleApiResponse> response(MoneySprinkle moneySprinkle){
-        return Header.OK();
+        SprinkleApiResponse sprinkleApiResponse = SprinkleApiResponse.builder()
+                .sprinkleMoney(moneySprinkle.getSprinkleMoney())
+                .sprinkleAt(moneySprinkle.getSprinkleAt())
+                .token(moneySprinkle.getToken())
+                .build();
+
+        return Header.OK(sprinkleApiResponse);
     }
 
     private Header<SprinkleApiResponse> response(MoneySprinkle moneySprinkle,List<String> receiveList,long receiveMoney){

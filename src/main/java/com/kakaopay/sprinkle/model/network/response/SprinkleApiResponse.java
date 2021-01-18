@@ -17,6 +17,8 @@ public class SprinkleApiResponse {
     private long sprinkleMoney;
     private long sprinkleAt;
 
+    private String token;
+
     private List<String> receiveList;
     private long receiveMoney;
 

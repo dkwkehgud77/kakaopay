@@ -52,8 +52,8 @@ public class ReceiveApiControllerTest {
                 .build()
                 .toUri();
 
-        var roomId = "AAA";
-        long userId = 4;
+        var roomId = "DDD";
+        long userId = 7;
         List<String> tmpList = new ArrayList<String>();
         var mockRes = new Header<ReceiveApiResponse>();
         var resData = new ReceiveApiResponse();

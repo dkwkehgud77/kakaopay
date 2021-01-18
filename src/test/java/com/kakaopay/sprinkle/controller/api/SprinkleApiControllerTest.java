@@ -58,8 +58,8 @@ public class SprinkleApiControllerTest {
                 .build()
                 .toUri();
 
-        var roomId = "AAA";
-        long userId = 3;
+        var roomId = "DDD";
+        long userId = 4;
 
         var mockReq = new Header<SprinkleApiRequest>();
         var data = new SprinkleApiRequest();
@@ -105,8 +105,8 @@ public class SprinkleApiControllerTest {
                 .build()
                 .toUri();
 
-        var roomId = "AAA";
-        long userId = 3;
+        var roomId = "DDD";
+        long userId = 4;
         List<String> tmpList = new ArrayList<String>();
         var mockRes = new Header<SprinkleApiResponse>();
         var resData = new SprinkleApiResponse();

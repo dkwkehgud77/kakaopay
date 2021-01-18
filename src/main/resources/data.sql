@@ -108,15 +108,15 @@ UNLOCK TABLES;
 
 
 LOCK TABLES `money_sprinkle` WRITE;
-INSERT INTO kakao.money_sprinkle (seq, expire_at, receive_count, sprinkle_at, sprinkle_money, token, sprinkle_user_id) VALUES (1, 20210126014821, 3, 20210119014821, 50000, 'RU9', 'AAA3');
-INSERT INTO kakao.money_sprinkle (seq, expire_at, receive_count, sprinkle_at, sprinkle_money, token, sprinkle_user_id) VALUES (2, 20210126014856, 2, 20210119014856, 20000, '5J1', 'BBB4');
+INSERT INTO kakao.money_sprinkle (seq, expire_at, receive_count, sprinkle_at, sprinkle_money, token, sprinkle_user_id) VALUES (1, 20210126014821, 3, 20210119014821, 50000, '5JI', 'CCC10');
+INSERT INTO kakao.money_sprinkle (seq, expire_at, receive_count, sprinkle_at, sprinkle_money, token, sprinkle_user_id) VALUES (2, 20210126014856, 2, 20210119014856, 20000, 'RU9', 'DDD4');
 UNLOCK TABLES;
 
 
 LOCK TABLES `money_receive` WRITE;
-INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (1, 20210269015821, 0, 16666, 'N', null, 1);
-INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (2, 20210269015821, 0, 16666, 'N', null, 1);
-INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (3, 20210269015822, 0, 16668, 'N', null, 1);
-INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (4, 20210269015856, 0, 10000, 'N', null, 2);
-INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (5, 20210269015856, 0, 10000, 'N', null, 2);
+INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (1, 20210269015821, 0, 10000, 'N', null, 1);
+INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (2, 20210269015821, 0, 10000, 'N', null, 1);
+INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (3, 20210269015822, 0, 16666, 'N', null, 2);
+INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (4, 20210269015856, 0, 16666, 'N', null, 2);
+INSERT INTO kakao.money_receive (seq, expire_at, receive_at, receive_money, receive_status, receive_user, money_sprinkle_seq) VALUES (5, 20210269015856, 0, 16668, 'N', null, 2);
 UNLOCK TABLES;
