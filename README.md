@@ -42,7 +42,8 @@ GET /money/sprinkle/{token}
 | 에러 코드       | 설명                                                         |
 | :-----  | ------------------------------------------------------------ |
 | 400  | Request 필드 부족 or 형식 불일치  |
-| 405  | Rest Method 불일치      |
+| 400  | X-ROOM-ID, X-USER-ID 없을시   |
+| 405  | Rest Method 타입 불일치      |
 
 	
 ### 1. 머니 뿌리기
@@ -211,7 +212,7 @@ sprinkle_money : 뿌린 금액
 sprinkle_at : 뿌린 시각
 receive_count : 뿌린 인원
 expire_at : 뿌리기 조회 만료 시각
-token : 뿌리기 요청건에 대한 고유 token값
+token : 뿌리기 요청건에 대한 고유 토큰 값
 ```
 
 * money_receive \
@@ -221,7 +222,7 @@ token : 뿌리기 요청건에 대한 고유 token값
 seq : money_receive 식별자 (PK / GeneratedValue)
 money_sprinkle_seq : money_sprinkle 식별자 (FK)
 receive_money : 분배 금액 or 받을 금액
-expire_at : 토큰 만료 시각
+expire_at : 받기 만료 시각
 receive_status : 받기 상태 Y/N
 receive_user : 받은 사용자
 receive_at : 받은 시각 
