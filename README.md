@@ -11,9 +11,9 @@
  - MySql 8.0.20
  
 ## DB 구성
-현재 jdbc 경로가 AWS 기반에 설치된 MySql DB로 설정한 상태입니다. 
-JPA 초기화 전략이 ddl-auto: create으로 데이터베이스 drop을 실행하고 생성된 DDL을 실행합니다.
-테이블이 생성되면 /resources 하위에 data.sql의 초기 데이터가 insert 됩니다. 
+현재 jdbc 경로가 AWS 기반에 설치된 MySql DB로 설정한 상태입니다. \
+JPA 초기화 전략이 ddl-auto: create으로 데이터베이스 drop을 실행하고 생성된 DDL을 실행합니다. \
+테이블이 생성되면 /resources 하위에 data.sql의 초기 데이터가 insert 됩니다. \
 재기동을 하면 기존에 저장된 정보는 모두 사라지는 점 유의하시기 바랍니다.
 
 ## 테이블 구성
@@ -33,9 +33,9 @@ GET /money/sprinkle/{token}
 	
 ### 0. 공통
 * HTTP Header 
-요청 HTTP Header에 대화방ID와 사용자ID를 전달합니다.
--대화방 식별값 : X-ROOM-ID
--사용자 식별값 : X-USER-ID
+요청 HTTP Header에 대화방 ID와 사용자 ID를 전달합니다. \
+-대화방 ID : X-ROOM-ID \
+-사용자 ID : X-USER-ID \
 
 * Error
 
@@ -46,9 +46,9 @@ GET /money/sprinkle/{token}
 
 	
 ### 1. 머니 뿌리기
-뿌릴 금액, 뿌릴 인원을 요청값으로 받아 정보를 db에 저장합니다. -> money_sprinkle 
-뿌릴 금액을 인원수에 맞게 분배되는 정보를 db에 저장합니다. -> money_receive
-고유 token을 발급하고 응답값으로 내려줍니다.
+뿌릴 금액, 뿌릴 인원을 요청값으로 받아 정보를 db에 저장합니다. -> money_sprinkle \
+뿌릴 금액을 인원수에 맞게 분배되는 정보를 db에 저장합니다. -> money_receive \
+고유 token을 발급하고 응답값으로 내려줍니다. \
 
 POST /money/sprinkle
 
