@@ -10,17 +10,25 @@
  - Lombok
  - MySql 8.0.20
  
+## 문제 해결
+ - 대화방(Room) 객체와 사용자 객체(User)를 랜덤으로 조인한 객체(RoomUser) 생성 
+ - 대화방에 속한 사용자(RoomUser)가 뿌리기 요청 - 뿌릴 금액, 받을 사용자 숫자 
+ - 뿌리기 요청에 따른 고유 token 및 머니뿌리기 객체(MoneySprinkle) 생성
+ - 뿌린 금액(MoneySprinkle)을 분배하여 머니받기 객체(MoneyReceive) 생성 - 1:N
+ - 같은 대화방의 사용자들이(RoomUser) 고유 token을 통해 머니받기 객체(MoneyReceive)를 받아감 
+ - 뿌린 사용자만(SprinkleRoomUser)이 고유 token을 통해 머니뿌리기 객체(MoneySprinkle)를 조회 가능 
+ 
 ## DB 구성
-현재 jdbc 경로가 AWS 기반에 설치된 MySql DB로 설정한 상태입니다. \
-JPA 초기화 전략이 ddl-auto: create으로 데이터베이스 drop을 실행하고 생성된 DDL을 실행합니다. \
-테이블이 생성되면 /resources 하위에 data.sql의 초기 데이터가 insert 됩니다. \
-재기동을 하면 기존에 저장된 정보는 모두 사라지는 점 유의하시기 바랍니다.
+- 현재 jdbc 경로가 AWS 기반에 설치된 MySql DB로 설정한 상태입니다. 
+- JPA 초기화 전략이 ddl-auto: create으로 데이터베이스 drop을 실행하고 생성된 DDL을 실행합니다. 
+- 테이블이 생성되면 /resources 하위에 data.sql의 초기 데이터가 insert 됩니다. 
+- 재기동을 하면 기존에 저장된 정보는 모두 사라지는 점 유의하시기 바랍니다.
 
 ## 테이블 구성
 ![db_erd_diagram](db_erd_diagram.png)
 
 
-### API 명세
+## API 명세
 	
 POST /money/sprinkle
 	- 기능 : 머니 뿌리기 
