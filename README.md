@@ -95,7 +95,7 @@ curl -X POST http://localhost:8080/money/sprinkle
 
 | result_code       | 현상                                                         |
 | :-----  | ------------------------------------------------------------ |
-| FAIL  | 대화방에 사용자가 존재하지 않을때 (room_user)|
+| FAIL  | 대화방에 사용자가 존재하지 않을때 (room_user.id)|
 
 
 #### 2. 머니 받기
@@ -129,9 +129,9 @@ curl -X PUT http://localhost:8080/money/receive/{token}
 
 | result_code       | 현상                                                         |
 | :-----  | ------------------------------------------------------------ |
-| FAIL | 뿌린이와 동일한 대화방에 속한 사용자가 아닐때 (room_user) |
-| FAIL | token값에 해당하는 데이터가 없을때 (money_sprinkle.sprinkle_user_id)|
-| FAIL | 자신이 뿌리기한 건을 자신이 받을때 (money_receive.expire_at)|
+| FAIL | 뿌린이와 동일한 대화방에 속한 사용자가 아닐때 (room_user.id) |
+| FAIL | token값에 해당하는 데이터가 없을때 (money_sprinkle.token)|
+| FAIL | 자신이 뿌리기한 건을 자신이 받을때 (money_sprinkle.sprinkle_user_id)|
 | FAIL | 뿌린지 10분이 지난 요청일때 - 받기 만료시각 지남 (money_receive.expire_at)|
 
 
