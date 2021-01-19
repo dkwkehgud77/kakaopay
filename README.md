@@ -182,7 +182,7 @@ curl -X GET http://localhost:8080/money/sprinkle/{token}
 대화방 정보 데이터 \
 논리적으로 room_user 테이블과 1:n 관계
 ```
-id : room 식별자 (PK / GeneratedValue)
+id : room 식별자 (PK)
 created_at : 생성 시각 
 user_name : 대화방 이름
 ```
