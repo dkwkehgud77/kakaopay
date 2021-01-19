@@ -224,7 +224,7 @@ token : 뿌리기 요청건에 대한 고유 토큰 값
 ```
 
 * money_receive \
-뿌린금액에 대한 분배 정보 데이터 \
+머니 받기 정보 데이터 \
 논리적으로 money_sprinkle 테이블과 n:1 관계
 ```
 seq : money_receive 식별자 (PK / GeneratedValue)
