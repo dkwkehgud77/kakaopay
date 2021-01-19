@@ -177,7 +177,7 @@ curl -X GET http://localhost:8080/money/sprinkle/{token}
 | FAIL | 뿌린 사용자가 존재하지 않을때|
 | FAIL | 뿌린지 7일이 지난 요청일때 - 조회 만료시각 지남|
 
-## Entity 
+## DB 테이블 상세
 * room \
 대화방 정보 데이터 \
 논리적으로 room_user 테이블과 1:n 관계
