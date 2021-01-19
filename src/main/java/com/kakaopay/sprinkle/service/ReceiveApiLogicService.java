@@ -41,7 +41,7 @@ public class ReceiveApiLogicService implements ReceiveInterface<ReceiveApiReques
         if(roomUser.isEmpty()){
             return Header.ERROR("동일한 대화방에 속한 사용자가 아닙니다.");
         }
-
+        
         Optional<MoneySprinkle> moneySprinkle = moneySprinkleRepository.findByTokenAndSprinkleUserIdStartsWith(token,xRoomId);
         if (moneySprinkle.isPresent()) {
 
@@ -68,7 +68,7 @@ public class ReceiveApiLogicService implements ReceiveInterface<ReceiveApiReques
                     if(moneyReceive.getExpireAt() < nowDate){
                         return Header.ERROR("뿌린지 10분이 지난 요청입니다.");
                     }else {
-                        // 2. MoneyReceive 생성  - 받기
+                        // MoneyReceive 받기  - 업데이트
                         moneyReceive.setReceiveStatus("Y");
                         moneyReceive.setReceiveUser(xReceiveUser);
                         moneyReceive.setReceiveAt(comUtils.getNowDate());
