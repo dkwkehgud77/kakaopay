@@ -22,6 +22,7 @@
 - 현재 jdbc 경로가 AWS 기반에 설치된 MySql DB로 설정한 상태입니다. 
 - JPA 초기화 전략이 ddl-auto: create으로 데이터베이스 drop을 실행하고 생성된 DDL을 실행합니다. 
 - 테이블이 생성되면 /resources 하위에 data.sql의 초기 데이터가 insert 됩니다. 
+- data.sql에서 뿌리기/받기 요청에 필요한 room_user의 대한 데이터를 확인할 수 있습니다.
 - 재기동을 하면 기존에 저장된 정보는 모두 사라지는 점 유의하시기 바랍니다.
 
 ## 테이블 구성
